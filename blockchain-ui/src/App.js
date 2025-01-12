@@ -6,6 +6,7 @@ const App = () => {
   const [blockchainData, setBlockchainData] = useState(
     "No data fetched yet..."
   );
+  const [miningStatus, setMiningStatus] = useState("");
 
   // Update the selected node
   const handleNodeSelection = (event) => {
@@ -76,14 +77,20 @@ const App = () => {
       return;
     }
 
+    setMiningStatus("Mining in Progress......Please wait and don't interact");
+
     try {
       const response = await fetch(`${nodeToUse}/mine`);
       const data = await response.json();
+      setMiningStatus(
+        "Mining Successful! A new block has been added to the blockchain"
+      );
       setBlockchainData(JSON.stringify(data.block, null, 2));
       alert(data.note);
     } catch (error) {
       console.error("Error mining block:", error);
       alert("Failed to mine block. Please try again.");
+      setMiningStatus("Failed to mine block, please try again");
     }
   };
 
@@ -157,6 +164,7 @@ const App = () => {
       <section className="mine-block">
         <h2>Mine a New Block</h2>
         <button onClick={mineBlock}>Mine Block</button>
+        {miningStatus && <p>{miningStatus}</p>}
       </section>
     </>
   );

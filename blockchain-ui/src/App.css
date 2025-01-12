@@ -112,3 +112,25 @@ pre {
 .mine-block button:hover {
   background-color: #E64A19;
 }
+
+.mine-block p {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mine-block p:nth-child(2) {
+  color: #ff9800; /* Progress */
+}
+
+.mine-block p:nth-child(3) {
+  color: #4caf50; /* Success */
+}
+
+.mine-block p:nth-child(4) {
+  color: #f44336; /* Failure */
+}
