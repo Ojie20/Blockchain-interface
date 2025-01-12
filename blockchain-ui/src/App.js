@@ -70,6 +70,23 @@ const App = () => {
     }
   };
 
+  const mineBlock = async () => {
+    if (!nodeToUse) {
+      alert("Please select a node!");
+      return;
+    }
+
+    try {
+      const response = await fetch(`${nodeToUse}/mine`);
+      const data = await response.json();
+      setBlockchainData(JSON.stringify(data.block, null, 2));
+      alert(data.note);
+    } catch (error) {
+      console.error("Error mining block:", error);
+      alert("Failed to mine block. Please try again.");
+    }
+  };
+
   return (
     <>
       <div className="container">
@@ -136,6 +153,10 @@ const App = () => {
           <button type="submit">Submit Transaction</button>
         </form>
         {transactionStatus && <p>{transactionStatus}</p>}
+      </section>
+      <section className="mine-block">
+        <h2>Mine a New Block</h2>
+        <button onClick={mineBlock}>Mine Block</button>
       </section>
     </>
   );

@@ -63,3 +63,52 @@ pre {
   border-radius: 5px;
   overflow-x: auto;
 }
+
+.transaction-form, .mine-block {
+  margin: 20px 0;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.transaction-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.transaction-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.transaction-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.transaction-form button:hover {
+  background-color: #45a049;
+}
+
+.mine-block button {
+  padding: 10px 20px;
+  background-color: #FF5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.mine-block button:hover {
+  background-color: #E64A19;
+}
