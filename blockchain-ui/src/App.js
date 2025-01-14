@@ -113,7 +113,7 @@ const App = () => {
             </select>
             <button onClick={fetchBlockchainData}>Fetch Blockchain Data</button>
           </section>
-          <section className="data-display">
+          <section className="data-display border-warning">
             <h2>Blockchain Data</h2>
             <pre>{blockchainData}</pre>
           </section>
@@ -135,6 +135,7 @@ const App = () => {
               value={transaction.amount}
               onChange={handleTransactionChange}
               required
+              className="border-warning"
             />
           </label>
           <label>
@@ -145,6 +146,7 @@ const App = () => {
               value={transaction.sender}
               onChange={handleTransactionChange}
               required
+              className="border-warning"
             />
           </label>
           <label>
@@ -155,6 +157,7 @@ const App = () => {
               value={transaction.recipient}
               onChange={handleTransactionChange}
               required
+              className="border-warning"
             />
           </label>
           <button type="submit">Submit Transaction</button>
